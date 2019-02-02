@@ -43,7 +43,9 @@ app.get('/bad',(req,res)=>{
     res.send( ({errorMessage:'something went wrong'}))
 })
 app.get('/project',(req,res)=>{
-    res.render('project.hbs')
+    res.render('project.hbs',{
+        pageTitle:"Projects page"
+    })
 })
 app.listen(port);
 console.log(`listening on port ${port}`)
