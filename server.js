@@ -17,9 +17,9 @@ app.use((req, resp,next)=>{
     })
     next()
 })
-app.use((req,resp, next)=>{
-    resp.render('maintainance.hbs')
-})
+// app.use((req,resp, next)=>{
+//     resp.render('maintainance.hbs')
+// })
 hbs.registerHelper('currentYear',()=>{
     return new Date().getFullYear()
 })
@@ -42,6 +42,8 @@ app.get('/about',(req,res)=>{
 app.get('/bad',(req,res)=>{
     res.send( ({errorMessage:'something went wrong'}))
 })
-
+app.get('/project',(req,res)=>{
+    res.render('project.hbs')
+})
 app.listen(port);
 console.log(`listening on port ${port}`)
